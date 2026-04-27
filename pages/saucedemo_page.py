@@ -1,0 +1,20 @@
+from selenium.webdriver.common.by import By
+class SauceDemoPage:
+    def __init__(self, driver):
+        self.driver= driver
+    def abrir_pagina(self):
+        self.driver.get("https://www.saucedemo.com/")
+    def escribir_usuario(self, user):
+         self.driver.find_element(By.ID,"user-name").send_keys(user)
+    def escribir_password(self):
+         self.driver.find_element(By.ID,"password").send_keys("secret_sauce")
+    def hacer_click_login(self):
+         self.driver.find_element(By.ID,"login-button").click()
+    def hacer_login(self,user):
+         self.escribir_usuario(user)
+         self.escribir_password()
+         self.hacer_click_login()
+    def login_exitoso(self):
+         return "inventory" in self.driver.current_url 
+    def error_visible(self):
+         return "error" in self.driver.page_source
