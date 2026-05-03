@@ -24,6 +24,6 @@ class SauceDemoPage:
          productos= self.driver.find_elements(By.CLASS_NAME, "inventory_item")
          return len(productos)>0
     def menu_visible(self):
-         self.driver.find_elements(By.ID, "react-burger-menu-btn").is_displayed()
+         return self.driver.find_elements(By.ID, "react-burger-menu-btn").is_displayed()
     def filtro_visible(self):
          return self.driver.find_element(By.CLASS_NAME,"product_sort_container").is_displayed()
