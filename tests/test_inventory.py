@@ -5,7 +5,7 @@ def test_pagina_inventario():
     driver=webdriver.Chrome()
     page= SauceDemoPage(driver)
     page.abrir_pagina()
-    page.hacer_login("standard_user", "secret_sauce")
+    page.hacer_login("standard_user", "secret_sauce", True)
     assert "Swag Labs" in page.obtener_titulo()
     assert page.hay_productos()
     assert page.menu_visible()
