@@ -18,3 +18,12 @@ class SauceDemoPage:
          return "inventory" in self.driver.current_url 
     def error_visible(self):
          return "error" in self.driver.page_source
+    def obtener_titulo(self):
+         return self.driver.title
+    def hay_productos(self):
+         productos= self.driver.find_elements(By.CLASS_NAME, "inventory_item")
+         return len(productos)>0
+    def menu_visible(self):
+         self.driver.find_elements(By.ID, "react-burger-menu-btn").is_displayed()
+    def filtro_visible(self):
+         return self.driver.find_element(By.CLASS_NAME,"product_sort_container").is_displayed()
