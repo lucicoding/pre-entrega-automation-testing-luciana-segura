@@ -10,5 +10,6 @@ def test_agregar_producto_carrito():
     assert page.obtener_contador_carrito()=="1"
     page.abrir_carrito()
     assert page.producto_en_carrito()
-    driver.quit()
     assert page.nombre_producto_carrito()=="Sauce Labs Backpack"
+    driver.quit()
+    
