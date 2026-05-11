@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 class SauceDemoPage:
     def __init__(self, driver):
         self.driver= driver
@@ -14,6 +16,7 @@ class SauceDemoPage:
          self.escribir_usuario(user)
          self.escribir_password()
          self.hacer_click_login()
+         WebDriverWait(self.driver,10).until(EC.url_contains("inventory"))
     def login_exitoso(self):
          return "inventory" in self.driver.current_url 
     def error_visible(self):
