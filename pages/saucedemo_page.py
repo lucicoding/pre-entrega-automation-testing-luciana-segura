@@ -45,5 +45,7 @@ class SauceDemoPage:
          return len(productos)>0
     def obtener_nombre_primer_producto(self):
          return self.driver.find_elements(By.CLASS_NAME,"inventory_item_name")[0].text
+    def obtener_precio_primer_producto(self):
+         return self.driver.find_elements(By.CLASS_NAME,"inventory_item_price")[0].text
     def nombre_producto_carrito(self):
          return self.driver.find_element(By.CLASS_NAME,"inventory_item_name").text
