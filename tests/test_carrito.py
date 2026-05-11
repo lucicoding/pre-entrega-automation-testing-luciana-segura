@@ -11,4 +11,4 @@ def test_agregar_producto_carrito():
     page.abrir_carrito()
     assert page.producto_en_carrito()
     driver.quit()
-    assert page.nombre_producto_carrito()=="Sauc Labs Backpack"
+    assert page.nombre_producto_carrito()=="Sauce Labs Backpack"
