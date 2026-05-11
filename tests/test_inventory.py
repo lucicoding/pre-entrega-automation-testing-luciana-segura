@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from pages.saucedemo_page import SauceDemoPage
+from utils.saucedemo_page import SauceDemoPage
 def test_pagina_inventario():
     driver=webdriver.Chrome()
     page= SauceDemoPage(driver)

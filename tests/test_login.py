@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from pages.saucedemo_page import SauceDemoPage
+from utils.saucedemo_page import SauceDemoPage
 @pytest.fixture
 def driver():
     driver=webdriver.Chrome()
@@ -12,8 +12,12 @@ def test_login_multiple(driver,user,resultado):
     page= SauceDemoPage(driver)
     page.abrir_pagina()
     page.hacer_login(user)
-    if resultado:
-        assert page.login_exitoso()
-    else:
-        assert page.error_visible()
+    try:
+        if resultado:
+            assert page.login_exitoso()
+        else:
+            assert page.error_visible()
+    except:
+        driver.save_screenshot("reports/screenshots/error_login_{user}.png")
+        raise
 
