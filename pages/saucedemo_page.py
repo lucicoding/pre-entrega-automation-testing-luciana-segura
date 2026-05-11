@@ -33,3 +33,15 @@ class SauceDemoPage:
          return self.driver.find_element(By.ID, "react-burger-menu-btn").is_displayed()
     def filtro_visible(self):
          return self.driver.find_element(By.CLASS_NAME,"product_sort_container").is_displayed()
+    def agregar_primer_producto(self):
+         botones= self.driver.find_elements(By.CLASS_NAME,"btn_inventory")
+         botones[0].click()
+    def obtener_contador_carrito(self):
+         return self.driver.find_element(By.CLASS_NAME, "shopping_cart_badge").click()
+    def abrir_carrito(self):
+         self.driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
+    def producto_en_carrito(self):
+         productos= self.driver.find_elements(By.CLASS_NAME,"inventory_item_name")
+         return len(productos)>0
+    def nombre_producto_carrito(self):
+         return self.driver.find_element(By.CLASS_NAME,"inventory_item_name").text
