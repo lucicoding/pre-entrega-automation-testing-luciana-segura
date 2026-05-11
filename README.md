@@ -29,4 +29,4 @@ Ejemplos:
 - Test carrito: pytest tests/test_carrito.py -v
 
 Generar reporte HTML
-- pytest -v --html=reporte.html
+- pytest -v --html=reports/reporte.html
