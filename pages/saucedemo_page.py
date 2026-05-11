@@ -16,7 +16,10 @@ class SauceDemoPage:
          self.escribir_usuario(user)
          self.escribir_password()
          self.hacer_click_login()
-         WebDriverWait(self.driver,10).until(EC.url_contains("inventory"))
+         try:
+          WebDriverWait(self.driver,10).until(EC.url_contains("inventory"))
+         except:
+              pass
     def login_exitoso(self):
          return "inventory" in self.driver.current_url 
     def error_visible(self):
