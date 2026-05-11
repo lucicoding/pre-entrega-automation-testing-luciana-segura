@@ -37,7 +37,7 @@ class SauceDemoPage:
          botones= self.driver.find_elements(By.CLASS_NAME,"btn_inventory")
          botones[0].click()
     def obtener_contador_carrito(self):
-         return self.driver.find_element(By.CLASS_NAME, "shopping_cart_badge").click()
+         return self.driver.find_element(By.CLASS_NAME, "shopping_cart_badge").text
     def abrir_carrito(self):
          self.driver.find_element(By.CLASS_NAME, "shopping_cart_link").click()
     def producto_en_carrito(self):
