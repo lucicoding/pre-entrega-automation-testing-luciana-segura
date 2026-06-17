@@ -8,7 +8,7 @@ class SauceDemoPage:
         self.driver.get("https://www.saucedemo.com/")
     def escribir_usuario(self, user):
          self.driver.find_element(By.ID,"user-name").send_keys(user)
-    def escribir_password(self):
+    def escribir_password(self, password):
          self.driver.find_element(By.ID,"password").send_keys(password)
     def hacer_click_login(self):
          self.driver.find_element(By.ID,"login-button").click()
