@@ -3,6 +3,8 @@ from selenium import webdriver
 from utils.saucedemo_page import SauceDemoPage
 from utils.data_reader import leer_csv
 from utils.logger import logger
+from datetime import datetime
+fecha= datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 @pytest.fixture
 def driver():
     driver=webdriver.Chrome()
@@ -24,6 +26,6 @@ def test_login_multiple(driver,user,password,resultado):
             logger.error("Login esperado fallido")
             assert page.error_visible()
     except:
-        driver.save_screenshot("reports/screenshots/error_login_{user}.png")
+        driver.save_screenshot(f"reports/screenshots/error_login_{user}_{fecha}.png")
         raise
 
