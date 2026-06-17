@@ -1,20 +1,20 @@
 import pytest
 from selenium import webdriver
 from utils.saucedemo_page import SauceDemoPage
+from utils.data_reader import leer_csv
 @pytest.fixture
 def driver():
     driver=webdriver.Chrome()
     yield driver
     driver.quit()
-@pytest.mark.parametrize("user, resultado",
- [("standard_user",True),("locked_out_user",False),("problem_user",True),("performance_glitch_user",True),("error_user",True),("visual_user",True)])
-def test_login_multiple(driver,user,resultado):
+@pytest.mark.parametrize("user,password, resultado", leer_csv("data/login_data.csv"))
+def test_login_multiple(driver,user,password,resultado):
     page= SauceDemoPage(driver)
     page.abrir_pagina()
     print("Pagina SauceDemo abierta")
-    page.hacer_login(user)
+    page.hacer_login(user, password)
     try:
-        if resultado:
+        if resultado=="ok":
             assert page.login_exitoso()
             print("Login de {user} realizado correctamente")
         else:
