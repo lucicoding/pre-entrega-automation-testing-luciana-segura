@@ -15,7 +15,6 @@ def test_login_multiple(driver,user,password,resultado):
     logger.info("Inicio del test de login")
     page= SauceDemoPage(driver)
     page.abrir_pagina()
-    print("Pagina SauceDemo abierta")
     logger.info(f"Intentando login con usuario: {user}")
     page.hacer_login(user, password)
     try:

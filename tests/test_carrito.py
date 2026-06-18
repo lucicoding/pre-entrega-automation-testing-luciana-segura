@@ -5,7 +5,7 @@ def test_agregar_producto_carrito():
     driver=webdriver.Chrome()
     page= SauceDemoPage(driver)
     page.abrir_pagina()
-    page.hacer_login("standard_user")
+    page.hacer_login("standard_user", "secret_sauce")
     print("Login realizado correctamente")
     nombre_producto= page.obtener_nombre_primer_producto()
     page.agregar_primer_producto()
