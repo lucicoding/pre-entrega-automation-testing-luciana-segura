@@ -17,14 +17,11 @@ def test_login_multiple(driver,user,password,resultado):
     page.abrir_pagina()
     logger.info(f"Intentando login con usuario: {user}")
     page.hacer_login(user, password)
-    try:
-        if resultado=="ok":
+    if resultado=="ok":
             logger.info("Login esperado exitoso")
             assert page.login_exitoso()
-        else:
+    else:
             logger.error("Login esperado fallido")
             assert page.error_visible()
-    except:
-        driver.save_screenshot(f"reports/screenshots/error_login_{user}_{fecha}.png")
-        raise
+    
 
