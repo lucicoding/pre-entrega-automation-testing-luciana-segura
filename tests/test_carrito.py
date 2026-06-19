@@ -18,4 +18,6 @@ def test_agregar_producto_carrito():
     assert page.nombre_producto_carrito()==nombre_producto
     print("Producto visible en carrito")
     driver.quit()
-    
+def test_falla():
+    assert False
+     

@@ -49,3 +49,10 @@ class SauceDemoPage:
          return self.driver.find_elements(By.CLASS_NAME,"inventory_item_price")[0].text
     def nombre_producto_carrito(self):
          return self.driver.find_element(By.CLASS_NAME,"inventory_item_name").text
+    def abrir_menu(self):
+         self.driver.find_element(By.ID, "react-burger-menu-btn").click()
+    def hacer_logout(self):
+         self.abrir_menu()
+         self.driver.find_element(By.ID, "logout_sidebar_link").click()
+    
+    
