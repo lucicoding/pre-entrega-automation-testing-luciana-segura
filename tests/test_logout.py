@@ -10,6 +10,7 @@ def test_logout():
     page= SauceDemoPage(driver)
     page.abrir_pagina()
     page.hacer_login("standard_user","secret_sauce")
+    page.abrir_menu()
     page.hacer_logout()
     assert driver.current_url=="https://www.saucedemo.com/"
     driver.quit()

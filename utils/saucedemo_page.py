@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 class SauceDemoPage:
     def __init__(self, driver):
         self.driver= driver
@@ -51,8 +52,15 @@ class SauceDemoPage:
          return self.driver.find_element(By.CLASS_NAME,"inventory_item_name").text
     def abrir_menu(self):
          self.driver.find_element(By.ID, "react-burger-menu-btn").click()
+         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located((By.ID, "logout_sidebar_link")))
     def hacer_logout(self):
-         self.abrir_menu()
-         self.driver.find_element(By.ID, "logout_sidebar_link").click()
+         logout=WebDriverWait(self.driver,10).until(EC.visibility_of_element_located((By.ID, "logout_sidebar_link")))
+         logout.click()
+    def ordenar_z_a(self):
+         Select(
+         self.driver.find_element(By.CLASS_NAME,"product_sort_container")
+         ).select_by_value("za")
+        
+         
     
     
