@@ -1,6 +1,12 @@
 import os
 from datetime import datetime
 import pytest
+from selenium import webdriver
+@pytest.fixture
+def driver():
+    driver=webdriver.Chrome()
+    yield driver
+    driver.quit()
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
@@ -14,3 +20,4 @@ def pytest_runtest_makereport(item, call):
             os.makedirs(screenshot_dir, exist_ok=True)
             screenshot_path = os.path.join(screenshot_dir, f"{test_name}_{fecha}.png")
             driver.save_screenshot(screenshot_path)
+            print(f"Captura de pantalla guardada en: {screenshot_path}")
