@@ -1,8 +1,8 @@
 import pytest
 from selenium import webdriver
-from utils.saucedemo_page import SauceDemoPage
-from utils.login_page import LoginPage
-from utils.inventory_page import InventoryPage
+from pages.login_page import LoginPage
+from pages.cart_page import CartPage
+from pages.inventory_page import InventoryPage
 from utils.data_reader import leer_csv
 from utils.logger import logger
 @pytest.mark.parametrize("user,password, resultado", leer_csv("data/login_data.csv"))

@@ -1,9 +1,8 @@
 import pytest
 from selenium import webdriver
-from utils.saucedemo_page import SauceDemoPage
-from utils.login_page import LoginPage
-from utils.cart_page import CartPage
-from utils.inventory_page import InventoryPage
+from pages.login_page import LoginPage
+from pages.cart_page import CartPage
+from pages.inventory_page import InventoryPage
 def test_pagina_inventario():
     driver=webdriver.Chrome()
     login= LoginPage(driver)
