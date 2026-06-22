@@ -8,10 +8,10 @@ Las pruebas utilizadas verifican funcionalidades como login, logout, visualizaci
 - Python
 - Selenium WebDriver
 - Pytest
-Requests
-pytest-html
+- Requests
+- pytest-html
 - Git 
-- 
+- GitHub
 
 ## Estructura del proyecto
 - proyecto-final-automation-testing-luciana-segura/
