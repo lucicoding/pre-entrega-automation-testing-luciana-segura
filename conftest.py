@@ -23,5 +23,5 @@ def pytest_runtest_makereport(item, call):
             driver.save_screenshot(screenshot_path)
             extra = getattr(rep, "extra", [])
             extra.append(pytest_html.extras.image(screenshot_path))
-            rep.extra = extra
+            rep.extras = extra
             print(f"Captura de pantalla guardada en: {screenshot_path}")

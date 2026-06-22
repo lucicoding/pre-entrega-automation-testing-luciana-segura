@@ -68,3 +68,4 @@ El reporte HTML se genera en la carpeta reports. Al abrir reporte.html se pude v
 - Duración de cada prueba.
 - Detalle de errores en caso de fallo.
 - Capturas de pantalla asociadas a pruebas fallidas.
+
