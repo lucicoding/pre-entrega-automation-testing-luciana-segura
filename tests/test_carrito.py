@@ -23,7 +23,5 @@ def test_agregar_producto_carrito():
     assert cart.nombre_producto_carrito()==nombre_producto
     print("Producto visible en carrito")
     driver.quit()
-def test_falla(driver):
-    driver.get("https://www.saucedemo.com/")
-    assert False
+
      

@@ -1,7 +1,7 @@
 # Automation QA - SauceDemo
 
 ## Popósito del proyecto
-Este proyecto tiene como objetivo la creación de frameork de automatización de pruebas desarollado en Python utilizando Pytest, Selenium WebDriver y Requests. Incluye pruebas de UI para el sito SauceDemo y pruebas de API para JSONPlaceholder. 
+Este proyecto tiene como objetivo la creación de un framework de automatización de pruebas desarollado en Python utilizando Pytest, Selenium WebDriver y Requests. Incluye pruebas de UI para el sito SauceDemo y pruebas de API para JSONPlaceholder. 
 Las pruebas utilizadas verifican funcionalidades como login, logout, visualización de productos, la presencia de distintos elementos en la interfaz, correcta función del filtro y operaciones básicas del carrito de compras.
 
 ## Tecnologías utilizadas
